@@ -29,16 +29,30 @@
       addressable_id: company.id,
       addressable_type: company.class.name
     )
-    puts "Address no is #{j}"
-  end
-end 
-10.times do |k|
-  User.create(
-    first_name: "Tanya #{k}",
-    last_name: "sahu #{k}",
-    email: "tanya123@gmail.com #{k}",
-    phone_no: "7879502946 #{k}",
-    password: "tanya123 #{k}",
-  )
-  puts "User no is #{k}"
+    puts " Company no #{i}"
+        10.times do |j|
+            Address.create(
+                name: "Backbencher Technologies #{j}",
+                ad_line1: "C21#{j}",
+                ad_line2: "Vijay Nagar#{j}",
+                area: "Malviya Nagar#{j}",
+                city: "Indore#{j}",
+                country: "India#{j}",
+                pin_code: 462010,
+                phone: "475938534#{j}",
+                addressable_id: company.id,
+                addressable_type: company.class.name
+            )
+            puts "Address no is #{j}"
+    
+    end
 end
+
+10.times do |i|
+    product=Product.create(
+        name: "Product name is App #{i}",
+        description: "Description of Product",
+        category: "Product Category"
+    )
+    puts "Products no #{i}"
+end 
