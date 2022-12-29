@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_27_153946) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_28_100114) do
   create_table "addresses", force: :cascade do |t|
     t.string "name"
     t.string "ad_line1"
@@ -20,8 +20,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_27_153946) do
     t.string "country"
     t.integer "pin_code"
     t.string "phone"
-    t.integer "addressable_id"
-    t.string "addressable_type"
+    t.integer "userable_id"
+    t.string "userable_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -42,6 +42,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_27_153946) do
     t.string "description"
     t.string "category"
     t.integer "company_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "password"
+    t.string "email"
+    t.string "phone_no"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

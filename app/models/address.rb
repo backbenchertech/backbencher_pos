@@ -1,5 +1,8 @@
 class Address < ApplicationRecord
-  belongs_to :addressable, polymorphic: true
+  belongs_to :userble, polymorphic: true
+
+  # has_many :userable, as: :usersable
+
 
   validates :name, presence: true 
     
