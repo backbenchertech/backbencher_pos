@@ -11,8 +11,6 @@ class CreateAddresses < ActiveRecord::Migration[7.0]
       t.string  :phone
       t.integer :userable_id
       t.string  :userable_type
-      
-      
       t.timestamps
     end
   end

@@ -7,7 +7,6 @@ class CreateCompanies < ActiveRecord::Migration[7.0]
       t.string :gst
       t.string :pan
       t.string :cin
-
       t.timestamps
     end
   end
