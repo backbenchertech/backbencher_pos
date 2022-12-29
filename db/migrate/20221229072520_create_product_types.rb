@@ -6,7 +6,6 @@ class CreateProductTypes < ActiveRecord::Migration[7.0]
       t.boolean :is_default
       t.integer :product_id
     
-
       t.timestamps
     end
   end
