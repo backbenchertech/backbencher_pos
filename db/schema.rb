@@ -10,8 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_27_153946) do
-  create_table "addresses", force: :cascade do |t|
+ActiveRecord::Schema[7.0].define(version: 2022_12_29_062935) do
+  create_table "addresses", charset: "utf8mb3", force: :cascade do |t|
     t.string "name"
     t.string "ad_line1"
     t.string "ad_line2"
@@ -26,7 +26,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_27_153946) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "companies", force: :cascade do |t|
+  create_table "companies", charset: "utf8mb3", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.string "phone_no"
@@ -37,11 +37,20 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_27_153946) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "products", force: :cascade do |t|
+  create_table "products", charset: "utf8mb3", force: :cascade do |t|
     t.string "name"
     t.string "description"
     t.string "category"
     t.integer "company_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "types", charset: "utf8mb3", force: :cascade do |t|
+    t.string "service_type"
+    t.string "virtual_type"
+    t.string "real_type"
+    t.integer "product_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
