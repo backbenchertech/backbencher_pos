@@ -1,9 +1,11 @@
 class Product < ApplicationRecord
+    # Association 
+
     belongs_to :company
     
-     validates :name, presence: true 
-
+    #validation 
+    
+    validates :name, presence: true 
     validates :description, presence: true 
-
     validates :category,  presence: true 
 end
