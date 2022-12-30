@@ -6,7 +6,8 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-10.times do |i|
+
+5.times do |i|
   company=Company.create(
     name: "Backbencher Technologies #{i}",
     email: "backbenchertechnologies#{i}@gmail.com",
@@ -15,8 +16,24 @@
     cin: "U72900MP2021PTC058300", 
     pan: "PCGPS5500G"
   )
-  puts " Company no #{i}"
-  3.times do |j|
+  product_type = ProductType.create(
+    name: "Service",
+    has_quantity: true,
+    is_default: true 
+  )
+  puts "Product type is created"
+  1.times do |i|
+    Product.create(
+      name: "Product name is App #{i}",
+      description: "Description of Product",
+      category: "Product Category",
+      product_type_id: product_type.id,
+      company_id: company.id,
+      p_type: "Service"
+    )
+    puts "Product is created" 
+  end 
+  5.times do |j|
     Address.create(
       name: "Backbencher Technologies #{j}",
       ad_line1: "C21#{j}",
@@ -25,19 +42,10 @@
       city: "Indore#{j}",
       country: "India#{j}",
       pin_code: 462010,
-      phone: "475938534#{j}",
+      phone: "4759385340",
       addressable_id: company.id,
       addressable_type: company.class.name
       )
       puts "Address no is #{j}"
   end
-end
-
-10.times do |i|
-  product=Product.create(
-    name: "Product name is App #{i}",
-    description: "Description of Product",
-    category: "Product Category"
-  )
-  puts "Products no #{i}"
 end 
