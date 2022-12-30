@@ -1,7 +1,6 @@
 class Address < ApplicationRecord
   # Association 
-  
-  has_many :users
+
   belongs_to :addressable, polymorphic: true
   
   # validation 
