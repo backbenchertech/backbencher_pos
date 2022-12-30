@@ -68,3 +68,36 @@ end
   )
   puts "User no is #{k}"
 end
+
+# create categories sample data
+5.times do |e| 
+  category = Category.create(
+    category_name: "Category #{e}", 
+  )
+
+  5.times do |ee| 
+    second_category = Category.create(
+      category_name: "Category Name #{ee}",
+      parent_id: category.id 
+    ) 
+    
+    5.times do |eee| 
+      category = Category.create(
+        category_name: "Category Name #{eee}",
+        parent_id: second_category
+      ) 
+    
+    end
+  end
+end
+
+puts "Category is created"
+1.times do |i|
+  Product.create(
+    name: "Product name is App #{i}",
+    description: "Description of Product",
+    category_id: category.id,
+    company_id: company.id
+  )
+  puts "Product is created" 
+end 
