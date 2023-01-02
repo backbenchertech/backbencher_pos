@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   # Association
   has_many :addresses, as: :addressable
+  has_many :employees
+  has_many :companys, through: :employees
 
   # Validation
   validates :email, presence: true,
