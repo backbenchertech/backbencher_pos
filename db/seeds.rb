@@ -100,4 +100,4 @@ puts "Category is created"
     company_id: company.id
   )
   puts "Product is created" 
-end 
+end
