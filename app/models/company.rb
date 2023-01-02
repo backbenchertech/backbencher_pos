@@ -1,6 +1,6 @@
 class Company < ApplicationRecord
   # Association
-  has_many :products
+  has_many :products, :foreign_key => :user_id
   has_many :addresses, as: :addressable
 
   # validation
