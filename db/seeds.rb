@@ -21,18 +21,18 @@
     has_quantity: true,
     is_default: true 
   )
-  puts "Product type is created"
-  1.times do |i|
-    Product.create(
-      name: "Product name is App #{i}",
-      description: "Description of Product",
-      category: "Product Category",
-      product_type_id: product_type.id,
-      company_id: company.id,
-      p_type: "Service"
-    )
-    puts "Product is created" 
-  end 
+    puts "Product type is created"
+    1.times do |i|
+      Product.create(
+        name: "Product name is App #{i}",
+        description: "Description of Product",
+        category: "Product Category",
+        product_type_id: product_type.id,
+        company_id: company.id,
+        p_type: "Service"
+      )
+      puts "Product is created" 
+    end 
   5.times do |j|
     Address.create(
       name: "Backbencher Technologies #{j}",
