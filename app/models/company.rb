@@ -2,6 +2,8 @@ class Company < ApplicationRecord
   # Association
   has_many :products
   has_many :addresses, as: :addressable
+  has_many :employees
+  has_many :users, through: :employees
 
   # validation
   validates :name, presence: true
