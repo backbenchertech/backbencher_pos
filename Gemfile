@@ -10,10 +10,15 @@ gem "rails-erd" , group: :development
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 gem "ruby-graphviz"
-# gem 'figaro'
+# adding  environment varialble
+gem 'figaro'
+
 
 # Use sqlite3 as the database for Active Record
 # gem "sqlite3", "~> 1.4"
+gem 'active_model_serializers'
+# for environment varialble
+gem 'dotenv-rails'
 
 gem "mysql2", "~> 0.5"
 
