@@ -1,8 +1,8 @@
 default: &default
   adapter: mysql2
   encoding: utf8
-  username: root
-  password: Master@123
+  username: ENV['mysql_username']
+  password: ENV['mysql_password']
   host: localhost
   port: 3306
 
