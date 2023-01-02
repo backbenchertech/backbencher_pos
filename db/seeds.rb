@@ -16,21 +16,21 @@
     pan: "PCGPS5500G"
   )
   puts " Company no #{i}"
-    3.times do |j|
-      Address.create(
-        name: "Backbencher Technologies #{j}",
-        ad_line1: "C21#{j}",
-        ad_line2: "Vijay Nagar#{j}",
-        area: "Malviya Nagar#{j}",
-        city: "Indore#{j}",
-        country: "India#{j}",
-        pin_code: 462010,
-        phone: "4759385346",
-        addressable_id: company.id,
-        addressable_type: company.class.name
-      )
-      puts "Address no is #{j}"
-      end
+  3.times do |j|
+    Address.create(
+      name: "Backbencher Technologies #{j}",
+      ad_line1: "C21#{j}",
+      ad_line2: "Vijay Nagar#{j}",
+      area: "Malviya Nagar#{j}",
+      city: "Indore#{j}",
+      country: "India#{j}",
+      pin_code: 462010,
+      phone: "4759385346",
+      addressable_id: company.id,
+      addressable_type: company.class.name
+    )
+    puts "Address no is #{j}"
+  end
 end 
 10.times do |k|
   User.create(
