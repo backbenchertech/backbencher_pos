@@ -7,6 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 
+# create company sample data
 5.times do |i|
   company=Company.create(
     name: "Backbencher Technologies #{i}",
@@ -16,23 +17,29 @@
     cin: "U72900MP2021PTC058300", 
     pan: "PCGPS5500G"
   )
+
+  # create product type sample data
   product_type = ProductType.create(
     name: "Service",
     has_quantity: true,
     is_default: true 
   )
-    puts "Product type is created"
-    1.times do |i|
-      Product.create(
-        name: "Product name is App #{i}",
-        description: "Description of Product",
-        category: "Product Category",
-        product_type_id: product_type.id,
-        company_id: company.id,
-        p_type: "Service"
-      )
-      puts "Product is created" 
-    end 
+  puts "Product type is created"
+  
+  # create product sample data
+  1.times do |i|
+    Product.create(
+      name: "Product name is App #{i}",
+      description: "Description of Product",
+      category: "Product Category",
+      product_type_id: product_type.id,
+      company_id: company.id,
+      p_type: "Service"
+    )
+    puts "Product is created" 
+  end 
+  
+  # create address sample data
   5.times do |j|
     Address.create(
       name: "Backbencher Technologies #{j}",
@@ -49,3 +56,15 @@
       puts "Address no is #{j}"
   end
 end 
+
+# create user sample data
+10.times do |k|
+  User.create(
+    first_name: "Tanya #{k}",
+    last_name: "sahu #{k}",
+    email: "tanya123@gmail.com #{k}",
+    phone_no: "7879502946 #{k}",
+    password: "tanya123 #{k}",
+  )
+  puts "User no is #{k}"
+end
