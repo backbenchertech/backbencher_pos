@@ -59,7 +59,7 @@ end
 
 # create user sample data
 10.times do |k|
-  User.create(
+  user=User.create(
     first_name: "Tanya #{k}",
     last_name: "sahu #{k}",
     email: "tanya123@gmail.com #{k}",
@@ -89,15 +89,35 @@ end
     
     end
   end
+  puts "Category is created"
+  1.times do |i|
+    Product.create(
+      name: "Product name is App #{i}",
+      description: "Description of Product",
+      category_id: category.id,
+      company_id: company.id
+    )
+    puts "Product is created" 
+  end
 end
 
-puts "Category is created"
-1.times do |i|
-  Product.create(
-    name: "Product name is App #{i}",
-    description: "Description of Product",
-    category_id: category.id,
+#create employee sample data
+5.times do |m|
+  employee=employee.create(
+    joining_date: "12/03/2023#{m}",                                             
+    registration: "23/02/2022#{m}",                                             
+    status: "status#{m}",                                                   
+    role_id: role.id,                                                  
+    user_id: user.id,                                                  
     company_id: company.id
   )
-  puts "Product is created" 
+  puts "employee no is #{m}"
+end
+
+#create user sample data
+5.time do |mm|
+  role=Role.create(
+    role_name: "role name#{mm}"
+  )
+  puts "role no is #{mm}"
 end
