@@ -2,6 +2,8 @@ class Company < ApplicationRecord
   # Association
   has_many :products
   has_many :addresses, as: :addressable
+  has_many :employees
+  has_many :users, through: :employees
 
   # validation
   validates :name, presence: true
@@ -14,5 +16,5 @@ class Company < ApplicationRecord
               format: { with: /\A([LUu]{1})([0-9]{5})([A-Za-z]{2})([0-9]{4})([A-Za-z]{3})([0-9]{6})\Z/ }
   validates :pan, presence: true,
               format: { with: /\A([a-zA-Z]{5})(\d{4})([a-zA-Z]{1})\Z/ }
-  validates :phone, presence: true, format: { with: /\A\d{10}\z/ }
+  validates :phone_no, presence: true, format: { with: /\A\d{10}\z/ }
 end 
