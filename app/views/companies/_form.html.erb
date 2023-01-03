@@ -1,0 +1,49 @@
+ <%= form_with(model: @company, local: true) do |form| %>
+ 
+  <% if @company.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@company.errors.count, "error") %> prohibited
+        this company from being saved:
+      </h2>
+      <ul>
+        <% @company.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= form.label :email%><br>
+    <%= form.text_area :email %>
+  </p>
+
+  <p>
+    <%= form.label :phone_no %><br>
+    <%= form.text_field :phone_no %>
+  </p>
+
+  <p>
+    <%= form.label :gst%><br>
+    <%= form.text_area :gst%>
+  </p>
+
+  <p>
+    <%= form.label :cin %><br>
+    <%= form.text_area :cin%>
+  </p>
+
+  <p>
+    <%= form.label :pan%><br>
+    <%= form.text_area :pan %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
